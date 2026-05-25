@@ -1,0 +1,2876 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Penugonda Nagaraju - Data Analyst Portfolio</title>
+  <meta name="description" content="Penugonda Nagaraju - Aspiring Data Analyst | Python &amp; Power BI Enthusiast | Premium Data Analytics Portfolio">
+  <meta name="keywords" content="Data Analyst, Python, SQL, Power BI, Excel, Data Science, Analytics Portfolio">
+  <link href="https://cdn.tailwindcss.com/3.4.17" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f2347 100%);
+      color: #1f2937;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+    }
+
+    .gradient-border {
+      position: relative;
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(20px);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .gradient-border::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      padding: 2px;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6, #06b6d4, #f59e0b);
+      border-radius: 16px;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-60px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(60px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% {
+        box-shadow: 0 0 30px rgba(59, 130, 246, 0.4), 0 0 60px rgba(139, 92, 246, 0.2);
+      }
+      50% {
+        box-shadow: 0 0 60px rgba(59, 130, 246, 0.6), 0 0 100px rgba(139, 92, 246, 0.4);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-25px);
+      }
+    }
+
+    @keyframes countUp {
+      from {
+        opacity: 0;
+        transform: scale(0.7);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes rotate-gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    @keyframes glow-pulse {
+      0%, 100% {
+        filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.4));
+      }
+      50% {
+        filter: drop-shadow(0 0 40px rgba(139, 92, 246, 0.6));
+      }
+    }
+
+    @keyframes progressFill {
+      from {
+        width: 0;
+      }
+      to {
+        width: var(--progress-width);
+      }
+    }
+
+    .animate-fade-in-up {
+      animation: fadeInUp 0.9s ease-out forwards;
+    }
+
+    .animate-slide-in-left {
+      animation: slideInLeft 0.9s ease-out forwards;
+    }
+
+    .animate-slide-in-right {
+      animation: slideInRight 0.9s ease-out forwards;
+    }
+
+    .animate-pulse-glow {
+      animation: pulse-glow 3s ease-in-out infinite;
+    }
+
+    .animate-float {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .animate-count-up {
+      animation: countUp 0.7s ease-out forwards;
+    }
+
+    .animate-glow-pulse {
+      animation: glow-pulse 2.5s ease-in-out infinite;
+    }
+
+    .stagger-1 { animation-delay: 0.1s; }
+    .stagger-2 { animation-delay: 0.2s; }
+    .stagger-3 { animation-delay: 0.3s; }
+    .stagger-4 { animation-delay: 0.4s; }
+    .stagger-5 { animation-delay: 0.5s; }
+    .stagger-6 { animation-delay: 0.6s; }
+
+    .progress-fill {
+      animation: progressFill 1.5s ease-out forwards;
+    }
+
+    button, a, .card-item {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .profile-image {
+      width: 400px;
+      height:400px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6, #06b6d4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+      color: white;
+      box-shadow: 0 0 60px rgba(59, 130, 246, 0.5), 0 0 100px rgba(139, 92, 246, 0.3), inset 0 0 30px rgba(255, 255, 255, 0.2);
+      border: 3px solid rgba(255, 255, 255, 0.2);
+      position: relative;
+    }
+
+    .profile-image::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4, #f59e0b, #3b82f6);
+      background-size: 200% 200%;
+      animation: rotate-gradient 6s ease infinite;
+      z-index: -1;
+      opacity: 0.5;
+    }
+
+    .profile-image:hover {
+      transform: scale(1.05);
+    }
+
+    nav {
+      backdrop-filter: blur(20px);
+      background: rgba(15, 23, 42, 0.5);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    nav a {
+      color: #e2e8f0;
+      font-weight: 500;
+      position: relative;
+      font-size: 14px;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #60a5fa;
+    }
+
+    nav a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      right: 0;
+      height: 2.5px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+      border-radius: 2px;
+    }
+
+    .card-item {
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.05));
+      opacity: 0;
+      z-index: -1;
+      transition: opacity 0.4s ease;
+    }
+
+    .card-item:hover::before {
+      opacity: 1;
+    }
+
+    .card-item:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 30px 60px rgba(59, 130, 246, 0.2), 0 0 40px rgba(139, 92, 246, 0.15);
+    }
+
+    .skill-bar {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .skill-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+      border-radius: 4px;
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 10px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+      position: relative;
+      overflow: hidden;
+      font-size: 15px;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: #60a5fa;
+      padding: 14px 32px;
+      border-radius: 10px;
+      border: 1.5px solid rgba(59, 130, 246, 0.4);
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(59, 130, 246, 0.1);
+      border-color: #60a5fa;
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+    }
+
+    .icon-box {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.1));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.15);
+    }
+
+    .icon-box:hover {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(139, 92, 246, 0.2));
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .timeline-item {
+      padding: 28px;
+      border-left: 3px solid;
+      border-image: linear-gradient(180deg, #3b82f6, #8b5cf6) 1;
+      margin-left: 20px;
+      position: relative;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      transition: all 0.4s ease;
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.1);
+    }
+
+    .timeline-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(59, 130, 246, 0.4);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(59, 130, 246, 0.2);
+    }
+
+    .timeline-dot {
+      width: 20px;
+      height: 20px;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      border-radius: 50%;
+      position: absolute;
+      left: -31.5px;
+      top: 40px;
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.6), 0 0 0 6px rgba(59, 130, 246, 0.1);
+      border: 3px solid rgba(15, 23, 42, 1);
+    }
+
+    .social-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1.5px solid rgba(59, 130, 246, 0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #60a5fa;
+      cursor: pointer;
+    }
+
+    .social-icon:hover {
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      color: white;
+      border-color: #60a5fa;
+      transform: translateY(-8px) rotate(10deg);
+      box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(139, 92, 246, 0.1));
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: #60a5fa;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+
+    .badge-success {
+      border-color: rgba(16, 185, 129, 0.3);
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.08));
+      color: #10b981;
+    }
+
+    .counter-number {
+      font-size: 42px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6, #06b6d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+
+    .counter-label {
+      color: #cbd5e1;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .verify-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #10b981;
+      background: rgba(16, 185, 129, 0.1);
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1.5px solid rgba(59, 130, 246, 0.2);
+      border-radius: 10px;
+      font-family: inherit;
+      transition: all 0.4s ease;
+      background: rgba(255, 255, 255, 0.06);
+      color: #e2e8f0;
+      font-size: 14px;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: rgba(226, 232, 240, 0.5);
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #60a5fa;
+      background: rgba(59, 130, 246, 0.08);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 140px;
+    }
+
+    section {
+      position: relative;
+      z-index: 2;
+    }
+
+    .section-title {
+      font-size: 42px;
+      font-weight: 800;
+      color: #f1f5f9;
+      margin-bottom: 8px;
+    }
+
+    .section-divider {
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+      border-radius: 2px;
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+    }
+
+    /* ===== NEW HERO SECTION CSS ===== */
+    .hero-section {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 10%;
+      position: relative;
+    }
+
+    .resume-btn {
+      position: absolute;
+      top: 30px;
+      right: 10%;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      color: white;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: 0.4s ease;
+      box-shadow: 0 0 25px rgba(139, 92, 246, 0.5);
+      z-index: 10;
+    }
+
+    .resume-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 40px rgba(139, 92, 246, 0.8);
+    }
+
+    .hero-content {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 80px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1;
+      animation: fade-left 1s ease;
+    }
+
+    .hero-title {
+      font-size: 78px;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    .hero-title span {
+      background: linear-gradient(90deg, #60a5fa, #8b5cf6, #22d3ee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 30px;
+      margin-bottom: 20px;
+      color: #dbeafe;
+    }
+
+    .hero-description {
+      font-size: 20px;
+      line-height: 1.8;
+      color: #d1d5db;
+      max-width: 650px;
+      margin-bottom: 40px;
+    }
+
+    .hero-icons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .hero-icons .icon-box {
+      width: 70px;
+      height: 70px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      color: #60a5fa;
+      transition: 0.4s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .hero-icons .icon-box:hover {
+      transform: translateY(-10px);
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      color: white;
+      box-shadow: 0 0 25px rgba(139, 92, 246, 0.6);
+    }
+
+    .hero-image-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fade-right 1s ease;
+    }
+
+    .profile-image {
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      padding: 8px;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6, #06b6d4, #f59e0b);
+      background-size: 300% 300%;
+      animation: rotate-gradient 6s ease infinite, float 4s ease-in-out infinite;
+      box-shadow: 0 0 40px rgba(59, 130, 246, 0.5), 0 0 80px rgba(139, 92, 246, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .profile-pic {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid rgba(255, 255, 255, 0.2);
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    @keyframes rotate-gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    @keyframes fade-left {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fade-right {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @media(max-width: 900px) {
+      .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+
+      .hero-title {
+        font-size: 55px;
+      }
+
+      .hero-subtitle {
+        font-size: 22px;
+      }
+
+      .hero-description {
+        font-size: 18px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-section .profile-image {
+        width: 280px;
+        height: 280px;
+      }
+
+      .hero-icons {
+        justify-content: center;
+      }
+
+      .resume-btn {
+        right: 50%;
+        transform: translateX(50%);
+      }
+
+      .hero-section {
+        padding: 80px 5%;
+      }
+    }
+
+    @media(max-width: 600px) {
+      .hero-title {
+        font-size: 40px;
+        line-height: 1.2;
+      }
+
+      .hero-subtitle {
+        font-size: 18px;
+      }
+
+      .hero-description {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .hero-section .profile-image {
+        width: 220px;
+        height: 220px;
+      }
+
+      .resume-btn {
+        padding: 12px 24px;
+        font-size: 14px;
+        top: 20px;
+        right: 20px;
+        transform: none;
+      }
+
+      .hero-icons .icon-box {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+      }
+
+      .hero-content {
+        gap: 40px;
+        padding: 0 10px;
+      }
+
+      .hero-section {
+        padding: 60px 5%;
+        min-height: auto;
+      }
+
+      .hero-text {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .section-title {
+        font-size: 28px;
+        word-wrap: break-word;
+      }
+
+      .card-item {
+        padding: 16px;
+      }
+
+      input, textarea {
+        font-size: 16px;
+      }
+
+      .timeline-item {
+        padding: 20px;
+        margin-left: 0;
+        margin-bottom: 16px;
+      }
+
+      .timeline-dot {
+        left: -19px;
+      }
+    }
+
+    @media(max-width: 480px) {
+      .hero-title {
+        font-size: 32px;
+      }
+
+      .hero-subtitle {
+        font-size: 16px;
+      }
+
+      .hero-description {
+        font-size: 14px;
+        max-width: 100%;
+      }
+
+      .resume-btn {
+        padding: 10px 20px;
+        font-size: 13px;
+        top: 15px;
+        right: 15px;
+      }
+
+      .hero-icons {
+        gap: 12px;
+      }
+
+      .hero-icons .icon-box {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+      }
+
+      .hero-section .profile-image {
+        width: 220px;
+        height: 220px;
+      }
+
+      .hero-section {
+        padding: 40px 4%;
+      }
+
+      .section-title {
+        font-size: 24px;
+      }
+
+      .card-item {
+        padding: 12px;
+      }
+
+      .badge {
+        padding: 4px 10px;
+        font-size: 11px;
+      }
+    }
+    /* ===== END NEW HERO SECTION CSS ===== */
+
+    @media (max-width: 768px) {
+      .counter-number {
+        font-size: 32px;
+      }
+
+      .profile-image {
+        width: 160px;
+        height: 160px;
+        font-size: 64px;
+      }
+
+      nav a {
+        font-size: 12px;
+        padding: 8px 10px;
+      }
+
+      .timeline-item {
+        margin-left: 10px;
+        padding: 16px;
+      }
+
+      .timeline-dot {
+        left: -19px;
+      }
+
+      .section-title {
+        font-size: 32px;
+      }
+    }
+
+    .loading {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(59, 130, 246, 0.1);
+      border-radius: 50%;
+      border-top-color: #60a5fa;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .message-toast {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 16px 24px;
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 10px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      animation: slideInRight 0.3s ease-out;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #e2e8f0;
+    }
+
+    .message-toast.success {
+      border-left: 4px solid #10b981;
+    }
+
+    .message-toast.error {
+      border-left: 4px solid #ef4444;
+    }
+  </style>
+ </head>
+ <body class="h-full">
+  <div id="app" class="h-full flex flex-col overflow-auto">
+   <!-- Navbar -->
+   <nav class="w-full">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="flex justify-between items-center h-16">
+      <div class="flex-shrink-0">
+       <a href="#home" class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400"> PN </a>
+      </div>
+      <div class="hidden md:flex space-x-8">
+       <a href="#home" class="nav-link active" onclick="setActiveNav('home')">Home</a> <a href="#about" class="nav-link" onclick="setActiveNav('about')">About</a> <a href="#skills" class="nav-link" onclick="setActiveNav('skills')">Skills</a> <a href="#projects" class="nav-link" onclick="setActiveNav('projects')">Projects</a> <a href="#internships" class="nav-link" onclick="setActiveNav('internships')">Internships</a> <a href="#education" class="nav-link" onclick="setActiveNav('education')">Education</a> <a href="#certifications" class="nav-link" onclick="setActiveNav('certifications')">Certifications</a> <a href="#contact" class="nav-link" onclick="setActiveNav('contact')">Contact</a>
+      </div>
+      <div class="md:hidden">
+       <button id="mobile-menu-btn" class="text-blue-400 hover:text-cyan-300"> <i data-lucide="menu" class="w-6 h-6"></i> </button>
+      </div>
+     </div>
+    </div>
+   </nav><!-- Hero Section -->
+   <section class="hero-section" id="home">
+    <!-- RESUME BUTTON -->
+    <a href="https://drive.google.com/file/d/1syAkIG85wj8RUc8gM2iO8PzRD4WXqsjV/view?usp=drive_link" target="_blank" class="resume-btn">
+      <i class="fas fa-download"></i> Download Resume
+    </a>
+
+    <div class="hero-content">
+      <!-- LEFT SIDE -->
+      <div class="hero-text">
+        <h1 class="hero-title">
+          Penugonda <br>
+          <span>Nagaraju</span>
+        </h1>
+
+        <h2 class="hero-subtitle">
+          Aspiring Data Analyst | Python & Power BI Enthusiast
+        </h2>
+
+        <p class="hero-description">
+          Passionate about transforming raw data into meaningful insights using Python, SQL, Excel, and Power BI.
+        </p>
+
+        <!-- ICONS -->
+        <div class="hero-icons">
+          <div class="icon-box">
+            <i class="fab fa-python"></i>
+          </div>
+          <div class="icon-box">
+            <i class="fas fa-database"></i>
+          </div>
+          <div class="icon-box">
+            <i class="fas fa-chart-bar"></i>
+          </div>
+          <div class="icon-box">
+            <i class="fas fa-brain"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE IMAGE -->
+      <div class="hero-image-container">
+        <div class="profile-image">
+          <img src="NAG.png" alt="Penugonda Nagaraju" class="profile-pic">
+        </div>
+      </div>
+    </div>
+   </section><!-- About Section -->
+   <section id="about" class="w-full py-24 px-4">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-16 animate-fade-in-up">
+      <h2 class="section-title">About Me</h2>
+      <div class="section-divider mx-auto"></div>
+     </div>
+     <div class="gradient-border p-8 md:p-12 animate-fade-in-up stagger-1 max-w-3xl mx-auto">
+      <p class="text-lg text-slate-300 leading-relaxed mb-6">I am an aspiring Data Analyst passionate about transforming raw data into meaningful insights using Python, SQL, Excel, and Power BI. With a strong foundation in Computer Science &amp; AI/ML, I am dedicated to solving complex data problems and creating impactful visualizations.</p>
+      <p class="text-lg text-slate-300 leading-relaxed mb-6">I enjoy working on data-driven projects, dashboards, machine learning applications, and predictive analytics. My goal is to build scalable solutions that leverage data visualization and analytics technologies to drive business decisions.</p>
+      <p class="text-lg text-slate-300 leading-relaxed">Currently pursuing my B.Tech in Computer Science Engineering (AI &amp; ML) at JNTUH University College of Engineering Manthani, I am actively seeking opportunities to apply my skills in real-world data analytics projects and contribute to innovative solutions.</p>
+     </div>
+    </div>
+   </section><!-- Skills Section -->
+   <section id="skills" class="w-full py-24 px-4">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-16 animate-fade-in-up">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="section-divider mx-auto"></div>
+     </div>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <!-- Technical Skills -->
+      <div class="animate-fade-in-up stagger-1">
+       <h3 class="text-2xl font-bold text-slate-100 mb-8">Core Skills</h3>
+       <div class="space-y-6">
+        <div>
+         <div class="flex justify-between mb-2">
+          <span class="font-semibold text-slate-300">Python</span> <span class="text-sm text-cyan-400 font-medium">Intermediate</span>
+         </div>
+         <div class="skill-bar">
+          <div class="skill-bar-fill progress-fill" style="--progress-width: 70%; width: 0;"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2">
+          <span class="font-semibold text-slate-300">SQL</span> <span class="text-sm text-cyan-400 font-medium">Intermediate</span>
+         </div>
+         <div class="skill-bar">
+          <div class="skill-bar-fill progress-fill" style="--progress-width: 65%; width: 0;"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2">
+          <span class="font-semibold text-slate-300">Excel</span> <span class="text-sm text-cyan-400 font-medium">Advanced</span>
+         </div>
+         <div class="skill-bar">
+          <div class="skill-bar-fill progress-fill" style="--progress-width: 90%; width: 0;"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2">
+          <span class="font-semibold text-slate-300">Power BI</span> <span class="text-sm text-cyan-400 font-medium">Beginner</span>
+         </div>
+         <div class="skill-bar">
+          <div class="skill-bar-fill progress-fill" style="--progress-width: 50%; width: 0;"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2">
+          <span class="font-semibold text-slate-300">Data Cleaning</span> <span class="text-sm text-cyan-400 font-medium">Intermediate</span>
+         </div>
+         <div class="skill-bar">
+          <div class="skill-bar-fill progress-fill" style="--progress-width: 75%; width: 0;"></div>
+         </div>
+        </div>
+       </div>
+      </div><!-- More Skills -->
+      <div class="animate-fade-in-up stagger-2">
+       <h3 class="text-2xl font-bold text-slate-100 mb-8">Advanced Skills</h3>
+       <div class="space-y-6">
+        <div>
+         <div class="flex justify-between mb-2">
+          <span class="font-semibold text-slate-300">Pandas</span> <span class="text-sm text-cyan-400 font-medium">Intermediate</span>
+         </div>
+         <div class="skill-bar">
+          <div class="skill-bar-fill progress-fill" style="--progress-width: 68%; width: 0;"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2">
+          <span class="font-semibold text-slate-300">NumPy</span> <span class="text-sm text-cyan-400 font-medium">Beginner</span>
+         </div>
+         <div class="skill-bar">
+          <div class="skill-bar-fill progress-fill" style="--progress-width: 55%; width: 0;"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2">
+          <span class="font-semibold text-slate-300">Machine Learning</span> <span class="text-sm text-cyan-400 font-medium">Beginner</span>
+         </div>
+         <div class="skill-bar">
+          <div class="skill-bar-fill progress-fill" style="--progress-width: 60%; width: 0;"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2">
+          <span class="font-semibold text-slate-300">Statistics</span> <span class="text-sm text-cyan-400 font-medium">Beginner</span>
+         </div>
+         <div class="skill-bar">
+          <div class="skill-bar-fill progress-fill" style="--progress-width: 50%; width: 0;"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2">
+          <span class="font-semibold text-slate-300">Data Visualization</span> <span class="text-sm text-cyan-400 font-medium">Intermediate</span>
+         </div>
+         <div class="skill-bar">
+          <div class="skill-bar-fill progress-fill" style="--progress-width: 70%; width: 0;"></div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div><!-- Tools & Technologies -->
+     <div class="mt-16 animate-fade-in-up stagger-3">
+      <h3 class="text-2xl font-bold text-slate-100 mb-8 text-center">Tools &amp; Technologies</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+       <div class="glass p-6 text-center card-item">
+        <div class="icon-box mx-auto mb-3">
+         <i data-lucide="code" class="w-6 h-6"></i>
+        </div>
+        <p class="font-semibold text-slate-200">Python</p>
+        <p class="text-sm text-slate-400">Programming</p>
+       </div>
+       <div class="glass p-6 text-center card-item">
+        <div class="icon-box mx-auto mb-3">
+         <i data-lucide="database" class="w-6 h-6"></i>
+        </div>
+        <p class="font-semibold text-slate-200">SQL</p>
+        <p class="text-sm text-slate-400">Databases</p>
+       </div>
+       <div class="glass p-6 text-center card-item">
+        <div class="icon-box mx-auto mb-3">
+         <i data-lucide="grid-3x3" class="w-6 h-6"></i>
+        </div>
+        <p class="font-semibold text-slate-200">Excel</p>
+        <p class="text-sm text-slate-400">Analysis</p>
+       </div>
+       <div class="glass p-6 text-center card-item">
+        <div class="icon-box mx-auto mb-3">
+         <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+        </div>
+        <p class="font-semibold text-slate-200">Power BI</p>
+        <p class="text-sm text-slate-400">Visualization</p>
+       </div>
+       <div class="glass p-6 text-center card-item">
+        <div class="icon-box mx-auto mb-3">
+         <i data-lucide="square" class="w-6 h-6"></i>
+        </div>
+        <p class="font-semibold text-slate-200">Pandas</p>
+        <p class="text-sm text-slate-400">Libraries</p>
+       </div>
+       <div class="glass p-6 text-center card-item">
+        <div class="icon-box mx-auto mb-3">
+         <i data-lucide="square" class="w-6 h-6"></i>
+        </div>
+        <p class="font-semibold text-slate-200">NumPy</p>
+        <p class="text-sm text-slate-400">Computing</p>
+       </div>
+       <div class="glass p-6 text-center card-item">
+        <div class="icon-box mx-auto mb-3">
+         <i data-lucide="trending-up" class="w-6 h-6"></i>
+        </div>
+        <p class="font-semibold text-slate-200">Matplotlib</p>
+        <p class="text-sm text-slate-400">Visualization</p>
+       </div>
+       <div class="glass p-6 text-center card-item">
+        <div class="icon-box mx-auto mb-3">
+         <i data-lucide="brain" class="w-6 h-6"></i>
+        </div>
+        <p class="font-semibold text-slate-200">Scikit-learn</p>
+        <p class="text-sm text-slate-400">ML</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Projects Section -->
+   <section id="projects" class="w-full py-24 px-4">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-16 animate-fade-in-up">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="section-divider mx-auto"></div>
+     </div>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Project 1 -->
+      <div class="glass p-6 card-item animate-fade-in-up stagger-1">
+       <div class="icon-box mb-4">
+        <i data-lucide="briefcase" class="w-6 h-6"></i>
+       </div>
+       <h3 class="text-xl font-bold text-slate-100 mb-2">Job Market Dashboard</h3>
+       <p class="text-slate-400 mb-4">Analyzed job market trends, salaries, hiring patterns, and skills demand using data visualization dashboards.</p>
+       <div class="flex flex-wrap gap-2 mb-4">
+        <span class="badge">Python</span> <span class="badge">Pandas</span> <span class="badge">Matplotlib</span>
+       </div><a href="https://github.com/nagaraju6626/Job_Market_Analysis_Dashboard" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-cyan-400 hover:text-blue-300 font-semibold"> View on GitHub <i data-lucide="external-link" class="w-4 h-4"></i> </a>
+      </div><!-- Project 2 -->
+      <div class="glass p-6 card-item animate-fade-in-up stagger-2">
+       <div class="icon-box mb-4">
+        <i data-lucide="alert-triangle" class="w-6 h-6"></i>
+       </div>
+       <h3 class="text-xl font-bold text-slate-100 mb-2">Job Scam Detector</h3>
+       <p class="text-slate-400 mb-4">ML-based web app that detects fraudulent job postings using predictive modeling and data analysis.</p>
+       <div class="flex flex-wrap gap-2 mb-4">
+        <span class="badge">Python</span> <span class="badge">Scikit-learn</span> <span class="badge">Streamlit</span>
+       </div><a href="https://github.com/nagaraju6626/job-scam-detector" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-cyan-400 hover:text-blue-300 font-semibold"> View on GitHub <i data-lucide="external-link" class="w-4 h-4"></i> </a>
+      </div><!-- Project 3 -->
+      <div class="glass p-6 card-item animate-fade-in-up stagger-3">
+       <div class="icon-box mb-4">
+        <i data-lucide="film" class="w-6 h-6"></i>
+       </div>
+       <h3 class="text-xl font-bold text-slate-100 mb-2">Netflix Content Analysis</h3>
+       <p class="text-slate-400 mb-4">Interactive Power BI dashboard analyzing Netflix movies and TV shows with visual insights and trend analysis.</p>
+       <div class="flex flex-wrap gap-2 mb-4">
+        <span class="badge">Power BI</span> <span class="badge">Excel</span> <span class="badge">Visualization</span>
+       </div><a href="https://github.com/nagaraju6626/Netflix_Content_Analysis_Dashboard" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-cyan-400 hover:text-blue-300 font-semibold"> View on GitHub <i data-lucide="external-link" class="w-4 h-4"></i> </a>
+      </div><!-- Project 4 -->
+      <div class="glass p-6 card-item animate-fade-in-up stagger-4">
+       <div class="icon-box mb-4">
+        <i data-lucide="trending-up" class="w-6 h-6"></i>
+       </div>
+       <h3 class="text-xl font-bold text-slate-100 mb-2">Salary Forecasting</h3>
+       <p class="text-slate-400 mb-4">Predictive analytics project for forecasting salaries using ML models and interactive dashboards.</p>
+       <div class="flex flex-wrap gap-2 mb-4">
+        <span class="badge">Python</span> <span class="badge">Power BI</span> <span class="badge">ML</span>
+       </div><a href="https://github.com/nagaraju6626/Predictive_Analytics_Project" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-cyan-400 hover:text-blue-300 font-semibold"> View on GitHub <i data-lucide="external-link" class="w-4 h-4"></i> </a>
+      </div><!-- Project 5 -->
+      <div class="glass p-6 card-item animate-fade-in-up stagger-5">
+       <div class="icon-box mb-4">
+        <i data-lucide="zap" class="w-6 h-6"></i>
+       </div>
+       <h3 class="text-xl font-bold text-slate-100 mb-2">Data Cleaning Automation</h3>
+       <p class="text-slate-400 mb-4">Automation project for preprocessing and cleaning datasets efficiently using Python and Pandas.</p>
+       <div class="flex flex-wrap gap-2 mb-4">
+        <span class="badge">Python</span> <span class="badge">Pandas</span> <span class="badge">Automation</span>
+       </div><a href="https://github.com/nagaraju6626/Data_Cleaning_Automation_Project" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-cyan-400 hover:text-blue-300 font-semibold"> View on GitHub <i data-lucide="external-link" class="w-4 h-4"></i> </a>
+      </div>
+     </div>
+    </div>
+   </section><!-- Internships Section -->
+   <section id="internships" class="w-full py-24 px-4">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-16 animate-fade-in-up">
+      <h2 class="section-title">Internship Experience</h2>
+      <div class="section-divider mx-auto"></div>
+     </div>
+     <div class="space-y-8">
+      <!-- Internship 1 -->
+      <div class="timeline-item glass animate-fade-in-up stagger-1 relative">
+       <div class="timeline-dot"></div>
+       <div class="flex items-start justify-between mb-2">
+        <div>
+         <h3 class="text-2xl font-bold text-slate-100">Thiranex</h3>
+         <p class="text-lg text-cyan-400 font-semibold">Data Analytics Intern</p>
+        </div><span class="text-sm font-medium text-slate-400 bg-blue-500 bg-opacity-10 px-3 py-1 rounded-full">May - June 2026</span>
+       </div>
+       <p class="text-slate-400 mb-4">Worked on practical data analytics projects under industry mentorship. Gained hands-on experience in data analysis, dashboards, analytics workflows, and project-based learning.</p>
+       <div class="flex flex-wrap gap-2">
+        <span class="badge badge-success">Remote</span> <span class="badge">Data Analytics</span> <span class="badge">Industry Training</span>
+       </div>
+      </div><!-- Internship 2 -->
+      <div class="timeline-item glass animate-fade-in-up stagger-2 relative">
+       <div class="timeline-dot"></div>
+       <div class="flex items-start justify-between mb-2">
+        <div>
+         <h3 class="text-2xl font-bold text-slate-100">Skillfied Mentor</h3>
+         <p class="text-lg text-cyan-400 font-semibold">Data Analytics Intern</p>
+        </div><span class="text-sm font-medium text-slate-400 bg-blue-500 bg-opacity-10 px-3 py-1 rounded-full">May - June 2026</span>
+       </div>
+       <p class="text-slate-400 mb-4">Completed a one-month internship focused on analytics learning, practical industry exposure, and professional skill development in the data analytics domain.</p>
+       <div class="flex flex-wrap gap-2">
+        <span class="badge">Data Analytics</span> <span class="badge">Professional Development</span> <span class="badge">Project-Based</span>
+       </div>
+      </div><!-- Internship 3 -->
+      <div class="timeline-item glass animate-fade-in-up stagger-3 relative">
+       <div class="timeline-dot"></div>
+       <div class="flex items-start justify-between mb-2">
+        <div>
+         <h3 class="text-2xl font-bold text-slate-100">iStudio</h3>
+         <p class="text-lg text-cyan-400 font-semibold">Data Analytics Trainee</p>
+        </div><span class="text-sm font-medium text-slate-400 bg-blue-500 bg-opacity-10 px-3 py-1 rounded-full">May - July 2026</span>
+       </div>
+       <p class="text-slate-400 mb-4">Participated in training sessions and project-based learning focused on data analytics, visualization, and industry-oriented skill development.</p>
+       <div class="flex flex-wrap gap-2">
+        <span class="badge">Training</span> <span class="badge">Analytics &amp; Visualization</span> <span class="badge">Industry Oriented</span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Education Section -->
+   <section id="education" class="w-full py-24 px-4">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-16 animate-fade-in-up">
+      <h2 class="section-title">Education</h2>
+      <div class="section-divider mx-auto"></div>
+     </div>
+     <div class="max-w-2xl mx-auto">
+      <div class="timeline-item glass animate-fade-in-up relative">
+       <div class="timeline-dot"></div>
+       <div class="flex items-start justify-between mb-2">
+        <div>
+         <h3 class="text-2xl font-bold text-slate-100">B.Tech - CSE (AI &amp; ML)</h3>
+         <p class="text-lg text-slate-300 font-semibold">Jawaharlal Nehru Technological University</p>
+         <p class="text-slate-400">University College of Engineering Manthani</p>
+        </div><span class="text-sm font-medium text-slate-400 bg-blue-500 bg-opacity-10 px-3 py-1 rounded-full">Graduating 2027</span>
+       </div>
+       <p class="text-slate-400 mt-4">Specialization in Artificial Intelligence and Machine Learning with focus on data analytics, data science, and intelligent systems.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Certifications Section -->
+   <section id="certifications" class="w-full py-24 px-4">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-16 animate-fade-in-up">
+      <h2 class="section-title">Certifications &amp; Achievements</h2>
+      <div class="section-divider mx-auto"></div>
+     </div>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Cert 1 -->
+      <div class="glass p-6 card-item animate-fade-in-up stagger-1">
+       <div class="flex items-start justify-between mb-4">
+        <div class="icon-box">
+         <i data-lucide="award" class="w-6 h-6"></i>
+        </div><span class="verify-badge"> ✓ Verified</span>
+       </div>
+       <h3 class="text-lg font-bold text-slate-100 mb-2">Introduction to Automation</h3>
+       <p class="text-sm text-slate-400 mb-3">UiPath - March 2026</p>
+       <p class="text-slate-400 text-sm mb-4">Successfully completed the "Introduction to Automation" course focused on automation concepts and workflow fundamentals.</p>
+       <div class="flex flex-wrap gap-2">
+        <span class="badge">Automation</span> <span class="badge">RPA Basics</span>
+       </div>
+      </div><!-- Cert 2 -->
+      <div class="glass p-6 card-item animate-fade-in-up stagger-2">
+       <div class="flex items-start justify-between mb-4">
+        <div class="icon-box">
+         <i data-lucide="award" class="w-6 h-6"></i>
+        </div><span class="verify-badge"> ✓ Verified</span>
+       </div>
+       <h3 class="text-lg font-bold text-slate-100 mb-2">Python Programming Course</h3>
+       <p class="text-sm text-slate-400 mb-3">GeeksforGeeks - 3 Weeks [2025]</p>
+       <p class="text-slate-400 text-sm mb-4">Successfully completed a Python programming course covering Python basics and problem-solving concepts.</p>
+       <div class="flex flex-wrap gap-2">
+        <span class="badge">Python</span> <span class="badge">Programming</span>
+       </div>
+      </div><!-- Cert 3 -->
+      <div class="glass p-6 card-item animate-fade-in-up stagger-3">
+       <div class="flex items-start justify-between mb-4">
+        <div class="icon-box">
+         <i data-lucide="award" class="w-6 h-6"></i>
+        </div><span class="verify-badge"> ✓ Verified</span>
+       </div>
+       <h3 class="text-lg font-bold text-slate-100 mb-2">Intro to Machine Learning</h3>
+       <p class="text-sm text-slate-400 mb-3">Kaggle - March 2026</p>
+       <p class="text-slate-400 text-sm mb-4">Successfully completed the Kaggle "Intro to Machine Learning" course covering ML fundamentals and model building.</p>
+       <div class="flex flex-wrap gap-2">
+        <span class="badge">Machine Learning</span> <span class="badge">Predictive Modeling</span>
+       </div>
+      </div><!-- Cert 4 -->
+      <div class="glass p-6 card-item animate-fade-in-up stagger-4">
+       <div class="flex items-start justify-between mb-4">
+        <div class="icon-box">
+         <i data-lucide="award" class="w-6 h-6"></i>
+        </div><span class="badge badge-success" style="background: rgba(139, 92, 246, 0.15); border-color: rgba(139, 92, 246, 0.3); color: #a855f7;"> 🎓 Workshop</span>
+       </div>
+       <h3 class="text-lg font-bold text-slate-100 mb-2">Generative AI &amp; Data Science</h3>
+       <p class="text-sm text-slate-400 mb-3">JNTUH University - March 10-13, 2026</p>
+       <p class="text-slate-400 text-sm mb-4">National Level Workshop focused on Generative AI and Data Science organized by the Department of Computer Science.</p>
+       <div class="flex flex-wrap gap-2">
+        <span class="badge">Generative AI</span> <span class="badge">Data Science</span>
+       </div>
+      </div><!-- Cert 5 -->
+      <div class="glass p-6 card-item animate-fade-in-up stagger-5">
+       <div class="flex items-start justify-between mb-4">
+        <div class="icon-box">
+         <i data-lucide="award" class="w-6 h-6"></i>
+        </div><span class="badge badge-success" style="background: rgba(245, 158, 11, 0.15); border-color: rgba(245, 158, 11, 0.3); color: #f59e0b;"> 🏆 Hackathon</span>
+       </div>
+       <h3 class="text-lg font-bold text-slate-100 mb-2">Smart India Hackathon 2024</h3>
+       <p class="text-sm text-slate-400 mb-3">JNTUH University - Team: CLUTCH CODERS</p>
+       <p class="text-slate-400 text-sm mb-4">Participated in the Internal Hackathon and collaborated on innovative technical problem-solving projects.</p>
+       <div class="flex flex-wrap gap-2">
+        <span class="badge">Team Collaboration</span> <span class="badge">Innovation</span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Contact Section -->
+   <section id="contact" class="w-full py-24 px-4">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-16 animate-fade-in-up">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="section-divider mx-auto"></div>
+     </div>
+     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+      <!-- Contact Info 1 -->
+      <div class="glass p-6 text-center card-item animate-fade-in-up stagger-1">
+       <div class="icon-box mx-auto mb-4">
+        <i data-lucide="mail" class="w-6 h-6"></i>
+       </div>
+       <h3 class="text-lg font-bold text-slate-100 mb-2">Email</h3><a href="mailto:penugonagaraju@gmail.com" class="text-cyan-400 hover:text-blue-300 font-semibold"> penugonagaraju@gmail.com </a>
+      </div><!-- Contact Info 2 -->
+      <div class="glass p-6 text-center card-item animate-fade-in-up stagger-2">
+       <div class="icon-box mx-auto mb-4">
+        <i data-lucide="phone" class="w-6 h-6"></i>
+       </div>
+       <h3 class="text-lg font-bold text-slate-100 mb-2">Phone</h3><a href="tel:+919391805506" class="text-cyan-400 hover:text-blue-300 font-semibold"> +91 93918 05506 </a>
+      </div><!-- Contact Info 3 -->
+      <div class="glass p-6 text-center card-item animate-fade-in-up stagger-3">
+       <div class="icon-box mx-auto mb-4">
+        <i data-lucide="map-pin" class="w-6 h-6"></i>
+       </div>
+       <h3 class="text-lg font-bold text-slate-100 mb-2">Location</h3>
+       <p class="text-slate-300 font-semibold">Warangal, Telangana, India</p>
+      </div>
+     </div><!-- Contact Form -->
+     <div class="glass p-8 md:p-12 max-w-2xl mx-auto animate-fade-in-up stagger-4">
+      <h3 class="text-2xl font-bold text-slate-100 mb-6 text-center">Send Me a Message</h3>
+      <form id="contactForm" class="space-y-6">
+       <div>
+        <label for="name" class="block text-sm font-semibold text-slate-300 mb-2">Name</label> <input type="text" id="name" name="name" required placeholder="Your Name" class="w-full">
+       </div>
+       <div>
+        <label for="email" class="block text-sm font-semibold text-slate-300 mb-2">Email</label> <input type="email" id="email" name="email" required placeholder="your.email@example.com" class="w-full">
+       </div>
+       <div>
+        <label for="subject" class="block text-sm font-semibold text-slate-300 mb-2">Subject</label> <input type="text" id="subject" name="subject" required placeholder="Email Subject" class="w-full">
+       </div>
+       <div>
+        <label for="message" class="block text-sm font-semibold text-slate-300 mb-2">Message</label> <textarea id="message" name="message" required placeholder="Your message here..." class="w-full"></textarea>
+       </div><button type="submit" class="btn-primary w-full inline-flex items-center justify-center gap-2"> <span id="submitText">Send Message</span> <i data-lucide="send" class="w-4 h-4" id="submitIcon"></i> </button>
+      </form>
+     </div><!-- Social Links -->
+     <div class="flex justify-center gap-6 mt-12 animate-fade-in-up stagger-5">
+      <a href="https://github.com/nagaraju6626" target="_blank" rel="noopener noreferrer" class="social-icon" title="GitHub"> <i data-lucide="github" class="w-5 h-5"></i> </a> <a href="https://www.linkedin.com/in/nagaraju-penugonda-307b1134a" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn"> <i data-lucide="linkedin" class="w-5 h-5"></i> </a> <a href="mailto:penugonagaraju@gmail.com" class="social-icon" title="Email"> <i data-lucide="mail" class="w-5 h-5"></i> </a>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="w-full bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white py-12 px-4 mt-20 border-t border-slate-700">
+    <div class="max-w-6xl mx-auto text-center">
+     <p class="text-lg font-semibold mb-2">Penugonda Nagaraju</p>
+     <p class="text-slate-400 mb-4">Data Analyst | Python &amp; Power BI Enthusiast</p>
+     <div class="border-t border-slate-700 pt-6">
+      <p class="text-slate-500">© 2026 Penugonda Nagaraju | Data Analyst Portfolio. All rights reserved.</p>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script>
+    lucide.createIcons();
+
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    function setActiveNav(section) {
+      navLinks.forEach(link => link.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      const sections = document.querySelectorAll('section');
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').substring(1) === current) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    const contactForm = document.getElementById('contactForm');
+    
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const submitText = document.getElementById('submitText');
+      submitBtn.disabled = true;
+      
+      setTimeout(() => {
+        showToast('Message received! I\'ll get back to you soon.', 'success');
+        contactForm.reset();
+        submitBtn.disabled = false;
+      }, 1000);
+    });
+
+    function showToast(message, type = 'success') {
+      const toast = document.createElement('div');
+      toast.className = `message-toast ${type}`;
+      toast.textContent = message;
+      document.body.appendChild(toast);
+      
+      setTimeout(() => {
+        toast.remove();
+      }, 3000);
+    }
+
+    function animateCounters() {
+      const counters = document.querySelectorAll('[data-count]');
+      counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-count'));
+        let current = 0;
+        const increment = Math.ceil(target / 30);
+        
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            counter.textContent = target + '+';
+            clearInterval(timer);
+          } else {
+            counter.textContent = current;
+          }
+        }, 50);
+      });
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (entry.target.id === 'home') {
+            animateCounters();
+          }
+        }
+      });
+    });
+
+    const homeSection = document.getElementById('home');
+    if (homeSection) {
+      observer.observe(homeSection);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+    });
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f2347 100%);
+      color: #1f2937;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* Glassmorphism Effect */
+    .glass {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+    }
+
+    .glass-dark {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+    }
+
+    .glass-premium {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(25px);
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Premium Gradient Borders */
+    .gradient-border {
+      position: relative;
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(20px);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .gradient-border::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      padding: 2px;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6, #06b6d4, #f59e0b);
+      border-radius: 16px;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-60px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(60px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% {
+        box-shadow: 0 0 30px rgba(59, 130, 246, 0.4), 0 0 60px rgba(139, 92, 246, 0.2);
+      }
+      50% {
+        box-shadow: 0 0 60px rgba(59, 130, 246, 0.6), 0 0 100px rgba(139, 92, 246, 0.4);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-25px);
+      }
+    }
+
+    @keyframes countUp {
+      from {
+        opacity: 0;
+        transform: scale(0.7);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -1000px 0;
+      }
+      100% {
+        background-position: 1000px 0;
+      }
+    }
+
+    @keyframes rotate-gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    @keyframes glow-pulse {
+      0%, 100% {
+        filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.4));
+      }
+      50% {
+        filter: drop-shadow(0 0 40px rgba(139, 92, 246, 0.6));
+      }
+    }
+
+    @keyframes blob-animation {
+      0%, 100% {
+        transform: translate(0, 0) scale(1);
+      }
+      33% {
+        transform: translate(30px, -50px) scale(1.1);
+      }
+      66% {
+        transform: translate(-20px, 20px) scale(0.9);
+      }
+    }
+
+    @keyframes floating-icons {
+      0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-15px) rotate(5deg);
+      }
+    }
+
+    .animate-fade-in-up {
+      animation: fadeInUp 0.9s ease-out forwards;
+    }
+
+    .animate-slide-in-left {
+      animation: slideInLeft 0.9s ease-out forwards;
+    }
+
+    .animate-slide-in-right {
+      animation: slideInRight 0.9s ease-out forwards;
+    }
+
+    .animate-pulse-glow {
+      animation: pulse-glow 3s ease-in-out infinite;
+    }
+
+    .animate-float {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .animate-count-up {
+      animation: countUp 0.7s ease-out forwards;
+    }
+
+    .animate-glow-pulse {
+      animation: glow-pulse 2.5s ease-in-out infinite;
+    }
+
+    .animate-blob {
+      animation: blob-animation 6s ease-in-out infinite;
+    }
+
+    /* Stagger animations */
+    .stagger-1 { animation-delay: 0.1s; }
+    .stagger-2 { animation-delay: 0.2s; }
+    .stagger-3 { animation-delay: 0.3s; }
+    .stagger-4 { animation-delay: 0.4s; }
+    .stagger-5 { animation-delay: 0.5s; }
+    .stagger-6 { animation-delay: 0.6s; }
+
+    /* Progress bar animation */
+    @keyframes progressFill {
+      from {
+        width: 0;
+      }
+      to {
+        width: var(--progress-width);
+      }
+    }
+
+    .progress-fill {
+      animation: progressFill 1.5s ease-out forwards;
+    }
+
+    /* Smooth transitions */
+    button, a, .card-item {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Hero Profile Picture */
+    .profile-image {
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6, #06b6d4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+      color: white;
+      box-shadow: 0 0 60px rgba(59, 130, 246, 0.5), 0 0 100px rgba(139, 92, 246, 0.3), inset 0 0 30px rgba(255, 255, 255, 0.2);
+      border: 3px solid rgba(255, 255, 255, 0.2);
+      position: relative;
+    }
+
+    .profile-image::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4, #f59e0b, #3b82f6);
+      background-size: 200% 200%;
+      animation: rotate-gradient 6s ease infinite;
+      z-index: -1;
+      opacity: 0.5;
+    }
+
+    .profile-image:hover {
+      animation: pulse-glow 1s ease-in-out;
+      transform: scale(1.05);
+    }
+
+    /* Navbar */
+    nav {
+      backdrop-filter: blur(20px);
+      background: rgba(15, 23, 42, 0.5);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    nav a {
+      color: #e2e8f0;
+      font-weight: 500;
+      position: relative;
+      font-size: 14px;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #60a5fa;
+    }
+
+    nav a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      right: 0;
+      height: 2.5px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+      border-radius: 2px;
+    }
+
+    /* Cards */
+    .card-item {
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.05));
+      opacity: 0;
+      z-index: -1;
+      transition: opacity 0.4s ease;
+    }
+
+    .card-item:hover::before {
+      opacity: 1;
+    }
+
+    .card-item:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 30px 60px rgba(59, 130, 246, 0.2), 0 0 40px rgba(139, 92, 246, 0.15);
+    }
+
+    /* Skill bars */
+    .skill-bar {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .skill-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+      border-radius: 4px;
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+    }
+
+    /* Circular Progress */
+    .circular-progress {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: conic-gradient(#3b82f6 var(--progress), rgba(255, 255, 255, 0.1) 0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 30px rgba(59, 130, 246, 0.3), inset 0 0 20px rgba(59, 130, 246, 0.1);
+    }
+
+    .circular-progress-inner {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      color: #60a5fa;
+    }
+
+    /* Button styles */
+    .btn-primary {
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 10px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+      position: relative;
+      overflow: hidden;
+      font-size: 15px;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .btn-primary:hover::before {
+      left: 100%;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: #60a5fa;
+      padding: 14px 32px;
+      border-radius: 10px;
+      border: 1.5px solid rgba(59, 130, 246, 0.4);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      font-size: 15px;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(59, 130, 246, 0.1);
+      border-color: #60a5fa;
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+    }
+
+    .btn-filter {
+      background: rgba(255, 255, 255, 0.06);
+      color: #e2e8f0;
+      padding: 8px 18px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 13px;
+    }
+
+    .btn-filter:hover,
+    .btn-filter.active {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(139, 92, 246, 0.2));
+      border-color: rgba(59, 130, 246, 0.6);
+      color: #60a5fa;
+    }
+
+    /* Icon styling */
+    .icon-box {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.1));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.15);
+    }
+
+    .icon-box:hover {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(139, 92, 246, 0.2));
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    /* Timeline */
+    .timeline-item {
+      padding: 28px;
+      border-left: 3px solid;
+      border-image: linear-gradient(180deg, #3b82f6, #8b5cf6) 1;
+      margin-left: 20px;
+      position: relative;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      transition: all 0.4s ease;
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.1);
+    }
+
+    .timeline-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(59, 130, 246, 0.4);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(59, 130, 246, 0.2);
+    }
+
+    .timeline-dot {
+      width: 20px;
+      height: 20px;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      border-radius: 50%;
+      position: absolute;
+      left: -31.5px;
+      top: 40px;
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.6), 0 0 0 6px rgba(59, 130, 246, 0.1);
+      border: 3px solid rgba(15, 23, 42, 1);
+    }
+
+    /* Social icons */
+    .social-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1.5px solid rgba(59, 130, 246, 0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #60a5fa;
+      cursor: pointer;
+    }
+
+    .social-icon:hover {
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      color: white;
+      border-color: #60a5fa;
+      transform: translateY(-8px) rotate(10deg);
+      box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
+    }
+
+    /* Badges */
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(139, 92, 246, 0.1));
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: #60a5fa;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+
+    .badge-success {
+      border-color: rgba(16, 185, 129, 0.3);
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.08));
+      color: #10b981;
+    }
+
+    .badge-warning {
+      border-color: rgba(245, 158, 11, 0.3);
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(245, 158, 11, 0.08));
+      color: #f59e0b;
+    }
+
+    .badge-purple {
+      border-color: rgba(168, 85, 247, 0.3);
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(168, 85, 247, 0.08));
+      color: #a855f7;
+    }
+
+    /* Counter */
+    .counter-item {
+      text-align: center;
+      padding: 24px;
+    }
+
+    .counter-number {
+      font-size: 42px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6, #06b6d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+
+    .counter-label {
+      color: #cbd5e1;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    /* Verification Badge */
+    .verify-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #10b981;
+      background: rgba(16, 185, 129, 0.1);
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    /* Form */
+    input, textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1.5px solid rgba(59, 130, 246, 0.2);
+      border-radius: 10px;
+      font-family: inherit;
+      transition: all 0.4s ease;
+      background: rgba(255, 255, 255, 0.06);
+      color: #e2e8f0;
+      font-size: 14px;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: rgba(226, 232, 240, 0.5);
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #60a5fa;
+      background: rgba(59, 130, 246, 0.08);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 140px;
+    }
+
+    /* Section styling */
+    section {
+      position: relative;
+      z-index: 2;
+    }
+
+    .section-title {
+      font-size: 42px;
+      font-weight: 800;
+      color: #f1f5f9;
+      margin-bottom: 8px;
+    }
+
+    .section-divider {
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+      border-radius: 2px;
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .counter-number {
+        font-size: 32px;
+      }
+
+      .profile-image {
+        width: 320px;
+        height: 320px;
+        font-size: 64px;
+      }
+
+      nav a {
+        font-size: 12px;
+        padding: 8px 10px;
+      }
+
+      .timeline-item {
+        margin-left: 10px;
+        padding: 20px;
+        border-radius: 12px;
+      }
+
+      .timeline-dot {
+        left: -19px;
+      }
+
+      .section-title {
+        font-size: 32px;
+      }
+    }
+
+    /* Loading state */
+    .loading {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(59, 130, 246, 0.1);
+      border-radius: 50%;
+      border-top-color: #60a5fa;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .message-toast {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 16px 24px;
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 10px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      animation: slideInRight 0.3s ease-out;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #e2e8f0;
+    }
+
+    .message-toast.success {
+      border-left: 4px solid #10b981;
+    }
+
+    .message-toast.error {
+      border-left: 4px solid #ef4444;
+    }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </body>
+</html>
+      <!-- Left Content -->
+      <div class="space-y-8">
+       <div class="space-y-6 animate-fade-in-up">
+        <h1 class="text-6xl md:text-7xl font-bold leading-tight text-white">Penugonda <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400">Nagaraju</span></h1>
+        <h2 class="text-2xl md:text-3xl font-semibold text-slate-300"><span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Aspiring Data Analyst</span> | Python &amp; Power BI</h2>
+       </div>
+       <p class="text-lg text-slate-400 leading-relaxed animate-fade-in-up stagger-1 max-w-2xl">Transforming raw data into powerful insights using Python, SQL, Excel, and Power BI. Building data-driven solutions that make an impact.</p>
+       <div class="flex flex-wrap gap-4 animate-fade-in-up stagger-2">
+        <a href="#projects" class="btn-primary inline-flex items-center gap-2"> <i data-lucide="arrow-right" class="w-4 h-4"></i> View Projects </a> <a href="https://drive.google.com/file/d/1syAkIG85wj8RUc8gM2iO8PzRD4WXqsjV/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-secondary inline-flex items-center gap-2"> <i data-lucide="download" class="w-4 h-4"></i> Resume </a> <a href="#contact" class="btn-secondary inline-flex items-center gap-2"> <i data-lucide="mail" class="w-4 h-4"></i> Contact </a>
+       </div><!-- Stats -->
+       <div class="grid grid-cols-3 gap-4 pt-8 animate-fade-in-up stagger-3">
+        <div class="glass p-6 text-center card-item">
+         <div class="counter-number" data-count="5">
+          5+
+         </div>
+         <div class="counter-label">
+          Projects
+         </div>
+        </div>
+        <div class="glass p-6 text-center card-item">
+         <div class="counter-number" data-count="3">
+          3+
+         </div>
+         <div class="counter-label">
+          Internships
+         </div>
+        </div>
+        <div class="glass p-6 text-center card-item">
+         <div class="counter-number" data-count="5">
+          5+
+         </div>
+         <div class="counter-label">
+          Certifications
+         </div>
+        </div>
+       </div>
+      </div><!-- Right Content - Profile Image -->
+      <div class="flex justify-center items-center animate-float">
+       <div class="profile-image animate-pulse-glow">
+        <i data-lucide="bar-chart-2" class="w-20 h-20"></i>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- About Section -->
+   <section id="about" class="w-full py-20 px-4 bg-white/40">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-16 animate-fade-in-up">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
+      <div class="w-16 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto"></div>
+     </div>
+     <div class="glass p-8 md:p-12 animate-fade-in-up stagger-1 max-w-3xl mx-auto">
+      <p class="text-lg text-gray-700 leading-relaxed mb-6">I am an aspiring Data Analyst passionate about transforming raw data into meaningful insights using Python, SQL, Excel, and Power BI. With a strong foundation in Computer Science &amp; AI/ML, I am dedicated to solving complex data problems and creating impactful visualizations.</p>
+      <p class="text-lg text-gray-700 leading-relaxed mb-6">I enjoy working on data-driven projects, dashboards, machine learning applications, and predictive analytics. My goal is to build scalable solutions that leverage data visualization and analytics technologies to drive business decisions.</p>
+      <p class="text-lg text-gray-700 leading-relaxed">Currently pursuing my B.Tech in Computer Science Engineering (AI &amp; ML) at JNTUH University College of Engineering Manthani, I am actively seeking opportunities to apply my skills in real-world data analytics projects and contribute to innovative solutions.</p>
+     </div>
+    </div>
+   </section><!-- Skills Section -->
+   <section id="skills" class="w-full py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-16 animate-fade-in-up">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">Skills &amp; Expertise</h2>
+      <div class="w-16 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto"></div>
+     </div>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <!-- Technical Skills -->
+      <div class="animate-fade-in-up stagger-1">
+       <h3 class="text-2xl font-bold text-gray-900 mb-8">Technical Skills</h3>
+       <div class="space-y-6">
+        <div>
+         <div class="flex justify-between mb-2">
+          <span class="font-semibold text-gray-700">Python</span> <span class="text-sm text-blue-600 font-medium">Intermediate</span>
+         </div>
+         <div class="skill-bar">
+          <div class="skill-bar-fill progress-fill" style="--progress-width: 70%; width: 0;"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2">
+          <span class="font-semibold text-gray-700">SQL</span> <span class="text-sm text-blue-600 font-medium">Intermediate</span>
+         </div>
+         <div class="skill-bar">
+          <div class="skill-bar-fill progress-fill" style="--progress-width: 65%; width: 0;"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2">
+          <span class="font-semibold text-gray-700">Excel</span> <span class="text-sm text-blue-600 font-medium">Advanced</span>
+         </div>
+         <div class="skill-bar">
+          <div class="skill-bar-fill progress-fill" style="--progress-width: 90%; width: 0;"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2">
+          <span class="font-semibold text-gray-700">Power BI</span> <span class="text-sm text-blue-600 font-medium">Beginner</span>
+         </div>
+         <div class="skill-bar">
+          <div class="skill-bar-fill progress-fill" style="--progress-width: 50%; width: 0;"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2">
+          <span class="font-semibold text-gray-700">Pandas</span> <span class="text-sm text-blue-600 font-medium">Intermediate</span>
+         </div>
+         <div class="skill-bar">
+          <div class="skill-bar-fill progress-fill" style="--progress-width: 68%; width: 0;"></div>
+         </div>
+        </div>
+       </div>
+      </div><!-- More Skills -->
+      <div class="animate-fade-in-up stagger-2">
+       <h3 class="text-2xl font-bold text-gray-900 mb-8">More Skills</h3>
+       <div class="space-y-6">
+        <div>
+         <div class="flex justify-between mb-2">
+          <span class="font-semibold text-gray-700">NumPy</span> <span class="text-sm text-blue-600 font-medium">Beginner</span>
+         </div>
+         <div class="skill-bar">
+          <div class="skill-bar-fill progress-fill" style="--progress-width: 55%; width: 0;"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2">
+          <span class="font-semibold text-gray-700">Statistics</span> <span class="text-sm text-blue-600 font-medium">Beginner</span>
+         </div>
+         <div class="skill-bar">
+          <div class="skill-bar-fill progress-fill" style="--progress-width: 50%; width: 0;"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2">
+          <span class="font-semibold text-gray-700">Data Cleaning</span> <span class="text-sm text-blue-600 font-medium">Intermediate</span>
+         </div>
+         <div class="skill-bar">
+          <div class="skill-bar-fill progress-fill" style="--progress-width: 75%; width: 0;"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2">
+          <span class="font-semibold text-gray-700">Machine Learning</span> <span class="text-sm text-blue-600 font-medium">Beginner</span>
+         </div>
+         <div class="skill-bar">
+          <div class="skill-bar-fill progress-fill" style="--progress-width: 60%; width: 0;"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2">
+          <span class="font-semibold text-gray-700">Data Visualization</span> <span class="text-sm text-blue-600 font-medium">Intermediate</span>
+         </div>
+         <div class="skill-bar">
+          <div class="skill-bar-fill progress-fill" style="--progress-width: 70%; width: 0;"></div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div><!-- Tools & Technologies -->
+     <div class="mt-16 animate-fade-in-up stagger-3">
+      <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">Tools &amp; Technologies</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+       <div class="glass p-6 text-center card-item">
+        <div class="icon-box mx-auto mb-3">
+         <i data-lucide="code" class="w-6 h-6"></i>
+        </div>
+        <p class="font-semibold text-gray-800">Python</p>
+        <p class="text-sm text-gray-600">Programming</p>
+       </div>
+       <div class="glass p-6 text-center card-item">
+        <div class="icon-box mx-auto mb-3">
+         <i data-lucide="database" class="w-6 h-6"></i>
+        </div>
+        <p class="font-semibold text-gray-800">SQL</p>
+        <p class="text-sm text-gray-600">Databases</p>
+       </div>
+       <div class="glass p-6 text-center card-item">
+        <div class="icon-box mx-auto mb-3">
+         <i data-lucide="grid-3x3" class="w-6 h-6"></i>
+        </div>
+        <p class="font-semibold text-gray-800">Excel</p>
+        <p class="text-sm text-gray-600">Data Analysis</p>
+       </div>
+       <div class="glass p-6 text-center card-item">
+        <div class="icon-box mx-auto mb-3">
+         <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+        </div>
+        <p class="font-semibold text-gray-800">Power BI</p>
+        <p class="text-sm text-gray-600">Visualization</p>
+       </div>
+       <div class="glass p-6 text-center card-item">
+        <div class="icon-box mx-auto mb-3">
+         <i data-lucide="square" class="w-6 h-6"></i>
+        </div>
+        <p class="font-semibold text-gray-800">Pandas</p>
+        <p class="text-sm text-gray-600">Data Libraries</p>
+       </div>
+       <div class="glass p-6 text-center card-item">
+        <div class="icon-box mx-auto mb-3">
+         <i data-lucide="square" class="w-6 h-6"></i>
+        </div>
+        <p class="font-semibold text-gray-800">NumPy</p>
+        <p class="text-sm text-gray-600">Numerical Computing</p>
+       </div>
+       <div class="glass p-6 text-center card-item">
+        <div class="icon-box mx-auto mb-3">
+         <i data-lucide="trending-up" class="w-6 h-6"></i>
+        </div>
+        <p class="font-semibold text-gray-800">Matplotlib</p>
+        <p class="text-sm text-gray-600">Visualization</p>
+       </div>
+       <div class="glass p-6 text-center card-item">
+        <div class="icon-box mx-auto mb-3">
+         <i data-lucide="brain" class="w-6 h-6"></i>
+        </div>
+        <p class="font-semibold text-gray-800">Scikit-learn</p>
+        <p class="text-sm text-gray-600">ML Algorithms</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Projects Section -->
+   <section id="projects" class="w-full py-20 px-4 bg-white/40">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-16 animate-fade-in-up">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+      <div class="w-16 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto"></div>
+     </div>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Project 1 -->
+      <div class="glass p-6 card-item animate-fade-in-up stagger-1">
+       <div class="icon-box mb-4">
+        <i data-lucide="briefcase" class="w-6 h-6"></i>
+       </div>
+       <h3 class="text-xl font-bold text-gray-900 mb-2">Job Market Dashboard</h3>
+       <p class="text-gray-600 mb-4">Analyzed job market trends, salaries, hiring patterns, and skills demand using data visualization dashboards.</p>
+       <div class="flex flex-wrap gap-2 mb-4">
+        <span class="badge">Python</span> <span class="badge">Pandas</span> <span class="badge">Matplotlib</span>
+       </div><a href="https://github.com/nagaraju6626/Job_Market_Analysis_Dashboard" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold"> View on GitHub <i data-lucide="external-link" class="w-4 h-4"></i> </a>
+      </div><!-- Project 2 -->
+      <div class="glass p-6 card-item animate-fade-in-up stagger-2">
+       <div class="icon-box mb-4">
+        <i data-lucide="alert-triangle" class="w-6 h-6"></i>
+       </div>
+       <h3 class="text-xl font-bold text-gray-900 mb-2">Job Scam Detector</h3>
+       <p class="text-gray-600 mb-4">ML-based web app that detects fraudulent job postings using predictive modeling and data analysis.</p>
+       <div class="flex flex-wrap gap-2 mb-4">
+        <span class="badge">Python</span> <span class="badge">Scikit-learn</span> <span class="badge">Streamlit</span>
+       </div><a href="https://github.com/nagaraju6626/job-scam-detector" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold"> View on GitHub <i data-lucide="external-link" class="w-4 h-4"></i> </a>
+      </div><!-- Project 3 -->
+      <div class="glass p-6 card-item animate-fade-in-up stagger-3">
+       <div class="icon-box mb-4">
+        <i data-lucide="film" class="w-6 h-6"></i>
+       </div>
+       <h3 class="text-xl font-bold text-gray-900 mb-2">Netflix Content Analysis</h3>
+       <p class="text-gray-600 mb-4">Interactive Power BI dashboard analyzing Netflix movies and TV shows with visual insights and trend analysis.</p>
+       <div class="flex flex-wrap gap-2 mb-4">
+        <span class="badge">Power BI</span> <span class="badge">Excel</span> <span class="badge">Data Visualization</span>
+       </div><a href="https://github.com/nagaraju6626/Netflix_Content_Analysis_Dashboard" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold"> View on GitHub <i data-lucide="external-link" class="w-4 h-4"></i> </a>
+      </div><!-- Project 4 -->
+      <div class="glass p-6 card-item animate-fade-in-up stagger-4">
+       <div class="icon-box mb-4">
+        <i data-lucide="trending-up" class="w-6 h-6"></i>
+       </div>
+       <h3 class="text-xl font-bold text-gray-900 mb-2">Salary Forecasting Analytics</h3>
+       <p class="text-gray-600 mb-4">Predictive analytics project for forecasting salaries using ML models and interactive dashboards.</p>
+       <div class="flex flex-wrap gap-2 mb-4">
+        <span class="badge">Python</span> <span class="badge">Power BI</span> <span class="badge">ML</span>
+       </div><a href="https://github.com/nagaraju6626/Predictive_Analytics_Project" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold"> View on GitHub <i data-lucide="external-link" class="w-4 h-4"></i> </a>
+      </div><!-- Project 5 -->
+      <div class="glass p-6 card-item animate-fade-in-up stagger-5">
+       <div class="icon-box mb-4">
+        <i data-lucide="zap" class="w-6 h-6"></i>
+       </div>
+       <h3 class="text-xl font-bold text-gray-900 mb-2">Data Cleaning Automation</h3>
+       <p class="text-gray-600 mb-4">Automation project for preprocessing and cleaning datasets efficiently using Python and Pandas.</p>
+       <div class="flex flex-wrap gap-2 mb-4">
+        <span class="badge">Python</span> <span class="badge">Pandas</span> <span class="badge">Automation</span>
+       </div><a href="https://github.com/nagaraju6626/Data_Cleaning_Automation_Project" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold"> View on GitHub <i data-lucide="external-link" class="w-4 h-4"></i> </a>
+      </div>
+     </div>
+    </div>
+   </section><!-- Internships Section -->
+   <section id="internships" class="w-full py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-16 animate-fade-in-up">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">Internship Experience</h2>
+      <div class="w-16 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto"></div>
+     </div>
+     <div class="space-y-8">
+      <!-- Internship 1 -->
+      <div class="timeline-item glass animate-fade-in-up stagger-1 relative">
+       <div class="timeline-dot"></div>
+       <div class="flex items-start justify-between mb-2">
+        <div>
+         <h3 class="text-2xl font-bold text-gray-900">Thiranex</h3>
+         <p class="text-lg text-blue-600 font-semibold">Data Analytics Intern</p>
+        </div><span class="text-sm font-medium text-gray-500 bg-blue-50 px-3 py-1 rounded-full">May - June 2026</span>
+       </div>
+       <p class="text-gray-600 mb-4">Worked on practical data analytics projects under industry mentorship. Gained hands-on experience in data analysis, dashboards, analytics workflows, and project-based learning.</p>
+       <div class="flex flex-wrap gap-2">
+        <span class="badge">Remote</span> <span class="badge">Data Analytics</span> <span class="badge">Industry Training</span>
+       </div>
+      </div><!-- Internship 2 -->
+      <div class="timeline-item glass animate-fade-in-up stagger-2 relative">
+       <div class="timeline-dot"></div>
+       <div class="flex items-start justify-between mb-2">
+        <div>
+         <h3 class="text-2xl font-bold text-gray-900">Skillfied Mentor</h3>
+         <p class="text-lg text-blue-600 font-semibold">Data Analytics Intern</p>
+        </div><span class="text-sm font-medium text-gray-500 bg-blue-50 px-3 py-1 rounded-full">May - June 2026</span>
+       </div>
+       <p class="text-gray-600 mb-4">Completed a one-month internship focused on analytics learning, practical industry exposure, and professional skill development in the data analytics domain.</p>
+       <div class="flex flex-wrap gap-2">
+        <span class="badge">Data Analytics</span> <span class="badge">Professional Development</span> <span class="badge">Project-Based</span>
+       </div>
+      </div><!-- Internship 3 -->
+      <div class="timeline-item glass animate-fade-in-up stagger-3 relative">
+       <div class="timeline-dot"></div>
+       <div class="flex items-start justify-between mb-2">
+        <div>
+         <h3 class="text-2xl font-bold text-gray-900">iStudio</h3>
+         <p class="text-lg text-blue-600 font-semibold">Data Analytics Internship Trainee</p>
+        </div><span class="text-sm font-medium text-gray-500 bg-blue-50 px-3 py-1 rounded-full">May - July 2026</span>
+       </div>
+       <p class="text-gray-600 mb-4">Participated in training sessions and project-based learning focused on data analytics, visualization, and industry-oriented skill development.</p>
+       <div class="flex flex-wrap gap-2">
+        <span class="badge">Training</span> <span class="badge">Analytics &amp; Visualization</span> <span class="badge">Industry Oriented</span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Education Section -->
+   <section id="education" class="w-full py-20 px-4 bg-white/40">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-16 animate-fade-in-up">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">Education</h2>
+      <div class="w-16 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto"></div>
+     </div>
+     <div class="max-w-2xl mx-auto">
+      <div class="timeline-item glass animate-fade-in-up relative">
+       <div class="timeline-dot"></div>
+       <div class="flex items-start justify-between mb-2">
+        <div>
+         <h3 class="text-2xl font-bold text-gray-900">B.Tech - Computer Science Engineering (AI &amp; ML)</h3>
+         <p class="text-lg text-gray-600 font-semibold">Jawaharlal Nehru Technological University</p>
+         <p class="text-gray-600">University College of Engineering Manthani</p>
+        </div><span class="text-sm font-medium text-gray-500 bg-blue-50 px-3 py-1 rounded-full">Graduating 2027</span>
+       </div>
+       <p class="text-gray-600 mt-4">Specialization in Artificial Intelligence and Machine Learning with focus on data analytics, data science, and intelligent systems.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Certifications Section -->
+   <section id="certifications" class="w-full py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-16 animate-fade-in-up">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">Certifications &amp; Achievements</h2>
+      <div class="w-16 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto"></div>
+     </div>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Cert 1 -->
+      <div class="glass p-6 card-item animate-fade-in-up stagger-1">
+       <div class="flex items-start justify-between mb-4">
+        <div class="icon-box">
+         <i data-lucide="award" class="w-6 h-6"></i>
+        </div><span class="text-xs font-bold text-green-600 bg-green-50 px-3 py-1 rounded-full">Verified</span>
+       </div>
+       <h3 class="text-lg font-bold text-gray-900 mb-2">Introduction to Automation</h3>
+       <p class="text-sm text-gray-600 mb-3">UiPath</p>
+       <p class="text-gray-600 text-sm mb-4">Successfully completed the "Introduction to Automation" course focused on automation concepts and workflow fundamentals.</p>
+       <div class="flex flex-wrap gap-2">
+        <span class="badge">Automation</span> <span class="badge">RPA</span>
+       </div>
+      </div><!-- Cert 2 -->
+      <div class="glass p-6 card-item animate-fade-in-up stagger-2">
+       <div class="flex items-start justify-between mb-4">
+        <div class="icon-box">
+         <i data-lucide="award" class="w-6 h-6"></i>
+        </div><span class="text-xs font-bold text-green-600 bg-green-50 px-3 py-1 rounded-full">Verified</span>
+       </div>
+       <h3 class="text-lg font-bold text-gray-900 mb-2">Python Course with Certificate</h3>
+       <p class="text-sm text-gray-600 mb-3">GeeksforGeeks - 3 Weeks</p>
+       <p class="text-gray-600 text-sm mb-4">Successfully completed a Python programming course covering Python basics and problem-solving concepts.</p>
+       <div class="flex flex-wrap gap-2">
+        <span class="badge">Python</span> <span class="badge">Programming</span>
+       </div>
+      </div><!-- Cert 3 -->
+      <div class="glass p-6 card-item animate-fade-in-up stagger-3">
+       <div class="flex items-start justify-between mb-4">
+        <div class="icon-box">
+         <i data-lucide="award" class="w-6 h-6"></i>
+        </div><span class="text-xs font-bold text-green-600 bg-green-50 px-3 py-1 rounded-full">Verified</span>
+       </div>
+       <h3 class="text-lg font-bold text-gray-900 mb-2">Intro to Machine Learning</h3>
+       <p class="text-sm text-gray-600 mb-3">Kaggle - March 2026</p>
+       <p class="text-gray-600 text-sm mb-4">Successfully completed the Kaggle "Intro to Machine Learning" course covering ML fundamentals and model building.</p>
+       <div class="flex flex-wrap gap-2">
+        <span class="badge">Machine Learning</span> <span class="badge">Predictive Modeling</span>
+       </div>
+      </div><!-- Cert 4 -->
+      <div class="glass p-6 card-item animate-fade-in-up stagger-4">
+       <div class="flex items-start justify-between mb-4">
+        <div class="icon-box">
+         <i data-lucide="award" class="w-6 h-6"></i>
+        </div><span class="text-xs font-bold text-purple-600 bg-purple-50 px-3 py-1 rounded-full">Workshop</span>
+       </div>
+       <h3 class="text-lg font-bold text-gray-900 mb-2">Generative AI &amp; Data Science Workshop</h3>
+       <p class="text-sm text-gray-600 mb-3">JNTUH University - March 10-13, 2026</p>
+       <p class="text-gray-600 text-sm mb-4">National Level Workshop focused on Generative AI and Data Science organized by the Department of Computer Science.</p>
+       <div class="flex flex-wrap gap-2">
+        <span class="badge">Generative AI</span> <span class="badge">Data Science</span>
+       </div>
+      </div><!-- Cert 5 -->
+      <div class="glass p-6 card-item animate-fade-in-up stagger-5">
+       <div class="flex items-start justify-between mb-4">
+        <div class="icon-box">
+         <i data-lucide="award" class="w-6 h-6"></i>
+        </div><span class="text-xs font-bold text-orange-600 bg-orange-50 px-3 py-1 rounded-full">Hackathon</span>
+       </div>
+       <h3 class="text-lg font-bold text-gray-900 mb-2">Smart India Hackathon 2024</h3>
+       <p class="text-sm text-gray-600 mb-3">JNTUH University - Team: CLUTCH CODERS</p>
+       <p class="text-gray-600 text-sm mb-4">Participated in the Internal Hackathon and collaborated on innovative technical problem-solving projects.</p>
+       <div class="flex flex-wrap gap-2">
+        <span class="badge">Team Collaboration</span> <span class="badge">Innovation</span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Contact Section -->
+   <section id="contact" class="w-full py-20 px-4 bg-white/40">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-16 animate-fade-in-up">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+      <div class="w-16 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto"></div>
+     </div>
+     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+      <!-- Contact Info 1 -->
+      <div class="glass p-6 text-center card-item animate-fade-in-up stagger-1">
+       <div class="icon-box mx-auto mb-4">
+        <i data-lucide="mail" class="w-6 h-6"></i>
+       </div>
+       <h3 class="text-lg font-bold text-gray-900 mb-2">Email</h3><a href="mailto:penugonagaraju@gmail.com" class="text-blue-600 hover:text-blue-700 font-semibold"> penugonagaraju@gmail.com </a>
+      </div><!-- Contact Info 2 -->
+      <div class="glass p-6 text-center card-item animate-fade-in-up stagger-2">
+       <div class="icon-box mx-auto mb-4">
+        <i data-lucide="phone" class="w-6 h-6"></i>
+       </div>
+       <h3 class="text-lg font-bold text-gray-900 mb-2">Phone</h3><a href="tel:+919391805506" class="text-blue-600 hover:text-blue-700 font-semibold"> +91 93918 05506 </a>
+      </div><!-- Contact Info 3 -->
+      <div class="glass p-6 text-center card-item animate-fade-in-up stagger-3">
+       <div class="icon-box mx-auto mb-4">
+        <i data-lucide="map-pin" class="w-6 h-6"></i>
+       </div>
+       <h3 class="text-lg font-bold text-gray-900 mb-2">Location</h3>
+       <p class="text-gray-600 font-semibold">Warangal, Telangana, India</p>
+      </div>
+     </div><!-- Contact Form -->
+     <div class="glass p-8 md:p-12 max-w-2xl mx-auto animate-fade-in-up stagger-4">
+      <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Send Me a Message</h3>
+      <form id="contactForm" class="space-y-6">
+       <div>
+        <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Name</label> <input type="text" id="name" name="name" required placeholder="Your Name" class="w-full">
+       </div>
+       <div>
+        <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email</label> <input type="email" id="email" name="email" required placeholder="your.email@example.com" class="w-full">
+       </div>
+       <div>
+        <label for="subject" class="block text-sm font-semibold text-gray-700 mb-2">Subject</label> <input type="text" id="subject" name="subject" required placeholder="Email Subject" class="w-full">
+       </div>
+       <div>
+        <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">Message</label> <textarea id="message" name="message" required placeholder="Your message here..." class="w-full"></textarea>
+       </div><button type="submit" class="btn-primary w-full inline-flex items-center justify-center gap-2"> <span id="submitText">Send Message</span> <i data-lucide="send" class="w-4 h-4" id="submitIcon"></i> </button>
+      </form>
+     </div><!-- Social Links -->
+     <div class="flex justify-center gap-6 mt-12 animate-fade-in-up stagger-5">
+      <a href="https://github.com/nagaraju6626" target="_blank" rel="noopener noreferrer" class="social-icon" title="GitHub"> <i data-lucide="github" class="w-5 h-5"></i> </a> <a href="https://www.linkedin.com/in/nagaraju-penugonda-307b1134a" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn"> <i data-lucide="linkedin" class="w-5 h-5"></i> </a> <a href="mailto:penugonagaraju@gmail.com" class="social-icon" title="Email"> <i data-lucide="mail" class="w-5 h-5"></i> </a>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="w-full bg-gradient-to-r from-blue-900 to-blue-800 text-white py-8 px-4 mt-12">
+    <div class="max-w-6xl mx-auto text-center">
+     <p class="text-lg font-semibold mb-2">Penugonda Nagaraju</p>
+     <p class="text-blue-200 mb-4">Data Analyst | Python &amp; Power BI Enthusiast</p>
+     <div class="border-t border-blue-700 pt-6">
+      <p class="text-blue-200">© 2026 Penugonda Nagaraju | Data Analyst Portfolio. All rights reserved.</p>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Navigation functionality
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    function setActiveNav(section) {
+      navLinks.forEach(link => link.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+
+    // Smooth scroll and active nav update
+    window.addEventListener('scroll', () => {
+      let current = '';
+      const sections = document.querySelectorAll('section');
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').substring(1) === current) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Contact form handling
+    const contactForm = document.getElementById('contactForm');
+    
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+      
+      // Show loading state
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const submitText = document.getElementById('submitText');
+      submitBtn.disabled = true;
+      
+      // Simulate form submission
+      setTimeout(() => {
+        showToast('Message received! I\'ll get back to you soon.', 'success');
+        contactForm.reset();
+        submitBtn.disabled = false;
+      }, 1000);
+    });
+
+    // Toast notification
+    function showToast(message, type = 'success') {
+      const toast = document.createElement('div');
+      toast.className = `message-toast ${type}`;
+      toast.textContent = message;
+      document.body.appendChild(toast);
+      
+      setTimeout(() => {
+        toast.remove();
+      }, 3000);
+    }
+
+    // Counter animation
+    function animateCounters() {
+      const counters = document.querySelectorAll('[data-count]');
+      counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-count'));
+        let current = 0;
+        const increment = Math.ceil(target / 30);
+        
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            counter.textContent = target + '+';
+            clearInterval(timer);
+          } else {
+            counter.textContent = current;
+          }
+        }, 50);
+      });
+    }
+
+    // Trigger counter animation when section is visible
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (entry.target.id === 'home') {
+            animateCounters();
+          }
+        }
+      });
+    });
+
+    const homeSection = document.getElementById('home');
+    if (homeSection) {
+      observer.observe(homeSection);
+    }
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        // Mobile menu implementation can be added here
+        console.log('Mobile menu toggled');
+      });
+    }
+
+    // Prevent scrollbar jump on form submission
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a011712fde27fc8b',t:'MTc3OTY3OTYyMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
