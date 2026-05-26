@@ -271,30 +271,42 @@
       border-radius: 2px;
     }
 
-    /* Mobile Menu Styles */
+    /* Mobile Menu Styles (minimal replacement to fix mobile click/touch) */
     .mobile-menu {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
       display: flex;
       flex-direction: column;
       gap: 8px;
-      padding: 0 0;
+      padding: 0;
       background: rgba(15, 23, 42, 0.98);
       border-top: 1px solid rgba(255, 255, 255, 0.08);
       max-height: 0;
       overflow: hidden;
       opacity: 0;
       visibility: hidden;
-      transform: translateY(-10px);
-      transition: max-height 0.3s ease, opacity 0.2s ease, visibility 0.2s ease, transform 0.3s ease, padding 0.3s ease;
+      transform-origin: top center;
+      transform: scaleY(0) translateY(-6px);
+      transition: transform 260ms cubic-bezier(0.2,0,0,1), opacity 220ms ease, visibility 200ms ease, max-height 300ms ease, padding 260ms ease;
+      z-index: 9999;            /* ensure menu sits above overlays */
+      pointer-events: none;     /* block clicks when closed */
+      -webkit-overflow-scrolling: touch;
+      touch-action: manipulation;
     }
 
+    /* active/open state */
     .mobile-menu.active {
-      max-height: 420px;
+      max-height: 480px;
       opacity: 1;
       visibility: visible;
-      transform: translateY(0);
+      transform: scaleY(1) translateY(0);
       padding: 12px 4px;
+      pointer-events: auto;
     }
 
+    /* ensure links respond to touch and disable tap highlighting/select */
     .mobile-nav-link {
       color: #e2e8f0;
       font-weight: 500;
@@ -304,6 +316,10 @@
       border-left: 3px solid transparent;
       transition: all 0.2s ease;
       cursor: pointer;
+      -webkit-tap-highlight-color: rgba(0,0,0,0.08);
+      -webkit-user-select: none;
+      user-select: none;
+      touch-action: manipulation;
     }
 
     .mobile-nav-link:hover {
@@ -995,11 +1011,11 @@
        <a href="#home" class="nav-link active" onclick="setActiveNav('home', this)">Home</a> <a href="#about" class="nav-link" onclick="setActiveNav('about', this)">About</a> <a href="#skills" class="nav-link" onclick="setActiveNav('skills', this)">Skills</a> <a href="#projects" class="nav-link" onclick="setActiveNav('projects', this)">Projects</a> <a href="#internships" class="nav-link" onclick="setActiveNav('internships', this)">Internships</a> <a href="#education" class="nav-link" onclick="setActiveNav('education', this)">Education</a> <a href="#certifications" class="nav-link" onclick="setActiveNav('certifications', this)">Certifications</a> <a href="#contact" class="nav-link" onclick="setActiveNav('contact', this)">Contact</a>
       </div>
       <div class="md:hidden">
-       <button id="mobile-menu-btn" class="text-blue-400 hover:text-cyan-300 focus:outline-none transition-colors"> <i data-lucide="menu" class="w-6 h-6"></i> </button>
+       <button id="mobile-menu-btn" type="button" aria-controls="mobile-menu" aria-expanded="false" class="text-blue-400 hover:text-cyan-300 focus:outline-none transition-colors"> <i data-lucide="menu" class="w-6 h-6"></i> </button>
       </div>
      </div>
-     <!-- Mobile Menu -->
-     <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu" role="menu" aria-hidden="true">
       <a href="#home" class="mobile-nav-link" onclick="closeMobileMenu(); setActiveNav('home', this)">Home</a>
       <a href="#about" class="mobile-nav-link" onclick="closeMobileMenu(); setActiveNav('about', this)">About</a>
       <a href="#skills" class="mobile-nav-link" onclick="closeMobileMenu(); setActiveNav('skills', this)">Skills</a>
@@ -1512,62 +1528,68 @@
       const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
       function setActiveNav(section, target) {
-        navLinks.forEach(link => link.classList.remove('active'));
-        mobileNavLinks.forEach(link => link.classList.remove('active'));
+        if (navLinks && navLinks.forEach) navLinks.forEach(link => link.classList.remove('active'));
+        if (mobileNavLinks && mobileNavLinks.forEach) mobileNavLinks.forEach(link => link.classList.remove('active'));
 
         const desktopLink = document.querySelector(`.nav-link[href="#${section}"]`);
-        if (desktopLink) {
-          desktopLink.classList.add('active');
-        }
+        if (desktopLink) desktopLink.classList.add('active');
 
-        if (target && target.classList) {
-          target.classList.add('active');
+        if (target && target.classList) target.classList.add('active');
+      }
+
+      // Outside-pointer/touch handler to close menu when tapping outside
+      function onOutsidePointer(e) {
+        if (!mobileMenu || !mobileMenuBtn) return;
+        if (mobileMenu.classList.contains('active') && !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+          closeMobileMenu();
         }
+      }
+
+      function openMobileMenu() {
+        if (!mobileMenu || !mobileMenuBtn) return;
+        mobileMenu.classList.add('active');
+        mobileMenu.setAttribute('aria-hidden', 'false');
+        mobileMenuBtn.setAttribute('aria-expanded', 'true');
+        // attach outside listeners only when open
+        document.addEventListener('pointerdown', onOutsidePointer);
+        document.addEventListener('touchstart', onOutsidePointer, { passive: true });
       }
 
       function closeMobileMenu() {
-        if (!mobileMenu) return;
+        if (!mobileMenu || !mobileMenuBtn) return;
         mobileMenu.classList.remove('active');
         mobileMenu.setAttribute('aria-hidden', 'true');
-        if (mobileMenuBtn) {
-          mobileMenuBtn.setAttribute('aria-expanded', 'false');
-        }
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        document.removeEventListener('pointerdown', onOutsidePointer);
+        document.removeEventListener('touchstart', onOutsidePointer);
       }
 
-      function toggleMobileMenu(event) {
+      function toggleMobileMenu(e) {
         if (!mobileMenu) return;
-        event.stopPropagation();
-        mobileMenu.classList.toggle('active');
-        const isOpen = mobileMenu.classList.contains('active');
-        mobileMenu.setAttribute('aria-hidden', String(!isOpen));
-        if (mobileMenuBtn) {
-          mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
-        }
+        e?.preventDefault?.();
+        e?.stopPropagation?.();
+        if (mobileMenu.classList.contains('active')) closeMobileMenu(); else openMobileMenu();
       }
 
       if (mobileMenuBtn && mobileMenu) {
         mobileMenuBtn.setAttribute('aria-expanded', 'false');
         mobileMenu.setAttribute('aria-hidden', 'true');
+
         mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        mobileMenuBtn.addEventListener('pointerup', toggleMobileMenu);
         mobileMenuBtn.addEventListener('touchend', toggleMobileMenu, { passive: true });
 
-        document.addEventListener('click', (event) => {
-          if (mobileMenu.classList.contains('active') && !mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
-            closeMobileMenu();
-          }
-        });
-
-        document.addEventListener('touchstart', (event) => {
-          if (mobileMenu.classList.contains('active') && !mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
-            closeMobileMenu();
-          }
-        });
-
         mobileNavLinks.forEach(link => {
-          link.addEventListener('click', () => {
+          const activate = (evt) => {
+            // allow native anchor (hash) behavior, but close menu and set active class
             closeMobileMenu();
-            setActiveNav(link.getAttribute('href').substring(1), link);
-          });
+            setTimeout(() => {
+              try { setActiveNav(link.getAttribute('href').substring(1), link); } catch (err) { }
+            }, 10);
+          };
+          link.addEventListener('click', activate);
+          link.addEventListener('pointerup', activate);
+          link.addEventListener('touchend', activate, { passive: true });
         });
       }
 
