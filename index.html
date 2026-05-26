@@ -1535,6 +1535,14 @@
         if (desktopLink) desktopLink.classList.add('active');
 
         if (target && target.classList) target.classList.add('active');
+
+        const sectionTarget = document.getElementById(section);
+        if (sectionTarget) {
+          sectionTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if (window.history && window.history.replaceState) {
+            window.history.replaceState(null, '', `#${section}`);
+          }
+        }
       }
 
       // Outside-pointer/touch handler to close menu when tapping outside
